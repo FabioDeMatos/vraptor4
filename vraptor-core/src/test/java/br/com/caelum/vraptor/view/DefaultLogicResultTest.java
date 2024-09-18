@@ -34,7 +34,7 @@ import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.Collections;
 
-import javax.servlet.RequestDispatcher;
+import jakarta.servlet.RequestDispatcher;
 
 import org.hamcrest.Description;
 import org.hamcrest.TypeSafeMatcher;

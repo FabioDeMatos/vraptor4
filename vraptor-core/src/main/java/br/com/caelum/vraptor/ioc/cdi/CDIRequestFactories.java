@@ -15,13 +15,13 @@
  */
 package br.com.caelum.vraptor.ioc.cdi;
 
-import javax.annotation.Priority;
+import jakarta.annotation.Priority;
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Alternative;
 import javax.enterprise.inject.Produces;
 import javax.interceptor.Interceptor;
-import javax.servlet.FilterChain;
-import javax.servlet.http.HttpSession;
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.http.HttpSession;
 
 import br.com.caelum.vraptor.events.RequestStarted;
 import br.com.caelum.vraptor.http.MutableRequest;

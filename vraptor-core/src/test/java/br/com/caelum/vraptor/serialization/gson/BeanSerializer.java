@@ -2,7 +2,7 @@ package br.com.caelum.vraptor.serialization.gson;
 
 import com.google.gson.*;
 
-import javax.annotation.Priority;
+import jakarta.annotation.Priority;
 import javax.enterprise.context.Dependent;
 import javax.enterprise.inject.Alternative;
 import javax.interceptor.Interceptor;

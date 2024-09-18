@@ -25,7 +25,7 @@ import java.io.Reader;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletResponse;
 
 import com.google.common.io.ByteStreams;
 import com.google.common.io.CharStreams;

@@ -17,7 +17,7 @@ package br.com.caelum.vraptor.serialization.gson;
 
 import java.lang.reflect.Type;
 
-import javax.annotation.Priority;
+import jakarta.annotation.Priority;
 import javax.enterprise.context.Dependent;
 import javax.enterprise.inject.Alternative;
 import javax.interceptor.Interceptor;

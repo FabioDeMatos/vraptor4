@@ -23,7 +23,7 @@ import static org.hamcrest.Matchers.typeCompatibleWith;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.when;
 
-import javax.annotation.Priority;
+import jakarta.annotation.Priority;
 import javax.interceptor.Interceptor;
 
 import org.junit.Before;

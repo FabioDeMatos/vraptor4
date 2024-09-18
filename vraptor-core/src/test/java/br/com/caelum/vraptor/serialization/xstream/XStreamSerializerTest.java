@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.enterprise.inject.Instance;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletResponse;
 
 import org.junit.Before;
 

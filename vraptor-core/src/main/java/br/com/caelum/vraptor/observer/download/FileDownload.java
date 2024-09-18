@@ -24,7 +24,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import javax.enterprise.inject.Vetoed;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletResponse;
 
 /**
  * Reads bytes from a file into the result.

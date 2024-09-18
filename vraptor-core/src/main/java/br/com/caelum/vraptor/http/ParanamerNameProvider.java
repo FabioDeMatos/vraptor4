@@ -18,7 +18,7 @@ package br.com.caelum.vraptor.http;
 
 import java.lang.reflect.AccessibleObject;
 
-import javax.annotation.Priority;
+import jakarta.annotation.Priority;
 import javax.enterprise.context.ApplicationScoped;
 import javax.interceptor.Interceptor;
 

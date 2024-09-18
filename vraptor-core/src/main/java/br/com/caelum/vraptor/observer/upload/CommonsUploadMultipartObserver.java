@@ -17,23 +17,15 @@
 package br.com.caelum.vraptor.observer.upload;
 
 import static com.google.common.base.Strings.isNullOrEmpty;
-import static org.apache.commons.fileupload.disk.DiskFileItemFactory.DEFAULT_SIZE_THRESHOLD;
 import static org.slf4j.LoggerFactory.getLogger;
 
-import java.io.UnsupportedEncodingException;
 import java.util.Collection;
 import java.util.List;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.event.Observes;
-import javax.servlet.ServletRequest;
+import jakarta.servlet.ServletRequest;
 
-import org.apache.commons.fileupload.FileItem;
-import org.apache.commons.fileupload.FileItemFactory;
-import org.apache.commons.fileupload.FileUploadBase.SizeLimitExceededException;
-import org.apache.commons.fileupload.FileUploadException;
-import org.apache.commons.fileupload.disk.DiskFileItemFactory;
-import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.slf4j.Logger;
 
 import br.com.caelum.vraptor.events.ControllerFound;
@@ -45,6 +37,11 @@ import com.google.common.collect.HashMultiset;
 import com.google.common.collect.LinkedListMultimap;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.Multiset;
+import org.apache.commons.fileupload2.core.DiskFileItemFactory;
+import org.apache.commons.fileupload2.core.FileItem;
+import org.apache.commons.fileupload2.core.FileItemFactory;
+import org.apache.commons.fileupload2.core.FileUploadException;
+import org.apache.commons.fileupload2.jakarta.JakartaServletFileUpload;
 
 /**
  * A multipart observer based on Apache Commons FileUpload.
@@ -61,7 +58,7 @@ public class CommonsUploadMultipartObserver {
 	public void upload(@Observes ControllerFound event, MutableRequest request,
 			MultipartConfig config, Validator validator) {
 
-		if (!ServletFileUpload.isMultipartContent(request)) {
+		if (!JakartaServletFileUpload.isMultipartContent(request)) {
 			return;
 		}
 
@@ -70,7 +67,7 @@ public class CommonsUploadMultipartObserver {
 		final Multiset<String> indexes = HashMultiset.create();
 		final Multimap<String, String> params = LinkedListMultimap.create();
 
-		ServletFileUpload uploader = createServletFileUpload(config);
+		JakartaServletFileUpload uploader = createServletFileUpload(config);
 
 		UploadSizeLimit uploadSizeLimit = event.getMethod().getMethod().getAnnotation(UploadSizeLimit.class);
 		uploader.setSizeMax(uploadSizeLimit != null ? uploadSizeLimit.sizeLimit() : config.getSizeLimit());
@@ -104,8 +101,8 @@ public class CommonsUploadMultipartObserver {
 				request.setParameter(paramName, paramValues.toArray(new String[paramValues.size()]));
 			}
 
-		} catch (final SizeLimitExceededException e) {
-			reportSizeLimitExceeded(e, validator);
+		/*} catch (final SizeLimitExceededException e) {
+			reportSizeLimitExceeded(e, validator);*/
 
 		} catch (FileUploadException e) {
 			reportFileUploadException(e, validator);
@@ -119,10 +116,10 @@ public class CommonsUploadMultipartObserver {
 	/**
 	 * This method is called when the {@link SizeLimitExceededException} was thrown.
 	 */
-	protected void reportSizeLimitExceeded(final SizeLimitExceededException e, Validator validator) {
+	/*protected void reportSizeLimitExceeded(final SizeLimitExceededException e, Validator validator) {
 		validator.add(new I18nMessage("upload", "file.limit.exceeded", e.getActualSize(), e.getPermittedSize()));
 		logger.warn("The file size limit was exceeded. Actual {} permitted {}", e.getActualSize(), e.getPermittedSize());
-	}
+	}*/
 
 	protected void reportFileUploadException(FileUploadException e, Validator validator) {
 		validator.add(new I18nMessage("upload", "file.upload.exception"));
@@ -138,21 +135,23 @@ public class CommonsUploadMultipartObserver {
 		logger.debug("Uploaded file: {} with {}", name, upload);
 	}
 
-	protected ServletFileUpload createServletFileUpload(MultipartConfig config) {
-		FileItemFactory factory = new DiskFileItemFactory(DEFAULT_SIZE_THRESHOLD, config.getDirectory());
+	protected JakartaServletFileUpload createServletFileUpload(MultipartConfig config) {
+                //FileItemFactory factory = new DiskFileItemFactory(DEFAULT_THRESHOLD, config.getDirectory());
+                FileItemFactory factory = DiskFileItemFactory.builder().setFile(config.getDirectory()).get();
 		logger.debug("Using repository {} for file upload", config.getDirectory());
 
-		return new ServletFileUpload(factory);
+		return new JakartaServletFileUpload(factory);
 	}
 
 	protected String getValue(FileItem item, ServletRequest request) {
 		String encoding = request.getCharacterEncoding();
 		if (!isNullOrEmpty(encoding)) {
-			try {
+			/*try {
 				return item.getString(encoding);
 			} catch (UnsupportedEncodingException e) {
 				logger.debug("Request has an invalid encoding. Ignoring it", e);
-			}
+			}*/
+                        return item.getString();
 		}
 		return item.getString();
 	}

@@ -47,7 +47,7 @@
 				</exclusion>
 				<exclusion>
 					<artifactId>jboss-el-api_3.0_spec</artifactId>
-					<groupId>org.jboss.spec.javax.el</groupId>
+					<groupId>org.jboss.spec.jakarta.el</groupId>
 				</exclusion>
 			</exclusions>
 		</dependency>
@@ -59,7 +59,7 @@
 			<exclusions>
 				<exclusion>
 					<artifactId>jboss-el-api_3.0_spec</artifactId>
-					<groupId>org.jboss.spec.javax.el</groupId>
+					<groupId>org.jboss.spec.jakarta.el</groupId>
 				</exclusion>
 			</exclusions>
 		</dependency>
@@ -88,13 +88,13 @@
 		</dependency>
 
 		<dependency>
-			<groupId>javax.servlet</groupId>
+			<groupId>jakarta.servlet</groupId>
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
 
 		<dependency>
-			<groupId>javax.el</groupId>
+			<groupId>jakarta.el</groupId>
 			<artifactId>el-api</artifactId>
 			<version>2.2</version>
 			<scope>provided</scope>
@@ -107,8 +107,8 @@
 		</dependency>
 
 		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
+			<groupId>jakarta.servlet</groupId>
+			<artifactId>jakarta.servlet-api</artifactId>
 			<version>3.1.0</version>
 			<scope>provided</scope>
 		</dependency>

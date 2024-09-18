@@ -27,8 +27,8 @@ import static org.mockito.Mockito.when;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
 
 import org.junit.Before;
 import org.junit.Rule;

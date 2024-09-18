@@ -3,8 +3,8 @@ package br.com.caelum.vraptor.musicjungle.observer;
 import javax.enterprise.context.Dependent;
 import javax.enterprise.event.Observes;
 import javax.inject.Inject;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
 
 import br.com.caelum.vraptor.events.VRaptorInitialized;
 import br.com.caelum.vraptor.musicjungle.model.User;

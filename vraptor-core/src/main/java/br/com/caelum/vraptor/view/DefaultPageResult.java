@@ -24,7 +24,7 @@ import java.lang.reflect.Method;
 
 import javax.enterprise.context.Dependent;
 import javax.inject.Inject;
-import javax.servlet.ServletException;
+import jakarta.servlet.ServletException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -19,10 +19,10 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 
 import javax.enterprise.inject.Specializes;
-import javax.servlet.FilterChain;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 import br.com.caelum.vraptor.core.DefaultStaticContentHandler;
 

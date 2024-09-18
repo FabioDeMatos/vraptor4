@@ -25,7 +25,7 @@ import static org.mockito.Mockito.when;
 import java.io.IOException;
 import java.util.EnumSet;
 
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletResponse;
 
 import org.junit.Before;
 import org.junit.Rule;

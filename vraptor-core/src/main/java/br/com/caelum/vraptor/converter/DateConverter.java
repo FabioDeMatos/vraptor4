@@ -23,7 +23,7 @@ import java.text.ParseException;
 import java.util.Date;
 import java.util.Locale;
 
-import javax.annotation.Priority;
+import jakarta.annotation.Priority;
 import javax.enterprise.inject.Alternative;
 import javax.inject.Inject;
 import javax.interceptor.Interceptor;

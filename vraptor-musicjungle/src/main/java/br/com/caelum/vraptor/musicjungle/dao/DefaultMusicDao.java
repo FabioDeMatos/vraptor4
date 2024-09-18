@@ -19,7 +19,7 @@ package br.com.caelum.vraptor.musicjungle.dao;
 import java.util.List;
 
 import javax.inject.Inject;
-import javax.persistence.EntityManager;
+import jakarta.persistence.EntityManager;
 
 import br.com.caelum.vraptor.musicjungle.model.Music;
 

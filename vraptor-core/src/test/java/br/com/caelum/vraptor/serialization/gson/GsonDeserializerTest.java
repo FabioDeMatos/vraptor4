@@ -38,7 +38,7 @@ import java.util.List;
 import java.util.TimeZone;
 
 import javax.enterprise.inject.Instance;
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 
 import org.junit.Before;
 import org.junit.Rule;

@@ -21,7 +21,7 @@ import java.io.IOException;
 import java.util.Set;
 
 import javax.enterprise.context.ApplicationScoped;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletResponse;
 
 import br.com.caelum.vraptor.InterceptionException;
 import br.com.caelum.vraptor.http.MutableRequest;

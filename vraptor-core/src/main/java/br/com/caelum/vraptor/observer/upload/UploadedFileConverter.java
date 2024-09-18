@@ -18,7 +18,7 @@ package br.com.caelum.vraptor.observer.upload;
 
 
 import javax.inject.Inject;
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 
 import br.com.caelum.vraptor.Convert;
 import br.com.caelum.vraptor.converter.Converter;

@@ -24,9 +24,9 @@ import java.util.Collection;
 import java.util.Locale;
 
 import javax.enterprise.inject.Vetoed;
-import javax.servlet.ServletOutputStream;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.ServletOutputStream;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletResponse;
 
 /**
  *
@@ -141,12 +141,12 @@ public class MockHttpServletResponse implements HttpServletResponse {
 		return null;
 	}
 
-	@Override
+	//@Override
 	public String encodeUrl(String url) {
 		return null;
 	}
 
-	@Override
+	//@Override
 	public String encodeRedirectUrl(String url) {
 		return null;
 	}
@@ -201,7 +201,7 @@ public class MockHttpServletResponse implements HttpServletResponse {
 		this.status = sc;
 	}
 	
-	@Override
+	//@Override
 	public void setStatus(int sc, String sm) {
 		
 	}
@@ -229,4 +229,9 @@ public class MockHttpServletResponse implements HttpServletResponse {
 	@Override
 	public void setContentLengthLong(long len) {
 	}
+
+    @Override
+    public void sendRedirect(String string, int i, boolean bln) throws IOException {
+        
+    }
 }

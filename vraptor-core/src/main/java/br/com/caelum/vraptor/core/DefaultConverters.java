@@ -22,7 +22,7 @@ import static com.google.common.base.Preconditions.checkState;
 import java.util.LinkedList;
 import java.util.List;
 
-import javax.annotation.Priority;
+import jakarta.annotation.Priority;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 

@@ -28,8 +28,8 @@ import java.nio.file.CopyOption;
 import java.nio.file.Path;
 
 import javax.enterprise.inject.Vetoed;
+import org.apache.commons.fileupload2.core.FileItem;
 
-import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.IOUtils;
 
@@ -75,7 +75,7 @@ public class CommonsUploadedFile implements UploadedFile {
 		requireNonNull(target, TARGET_CANNOT_BE_NULL);
 
 		try {
-			delegate.write(target);
+			delegate.write(target.toPath());
 		} catch (IOException e) {
 			throw e;
 		} catch (Exception e) {

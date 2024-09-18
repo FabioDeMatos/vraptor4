@@ -18,10 +18,10 @@ package br.com.caelum.vraptor.serialization.xstream;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import javax.annotation.PostConstruct;
+import jakarta.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletResponse;
 
 import br.com.caelum.vraptor.environment.Environment;
 import br.com.caelum.vraptor.serialization.Serializer;

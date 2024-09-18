@@ -22,9 +22,11 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
+import java.nio.file.Path;
 
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileItemHeaders;
+import org.apache.commons.fileupload2.core.FileItem;
 
 public class MockFileItem implements FileItem {
 
@@ -144,5 +146,15 @@ public class MockFileItem implements FileItem {
 	@Override
 	public void setHeaders(FileItemHeaders arg0) {
 	}
+
+        @Override
+        public String getString(Charset chrst) throws IOException {
+            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        }
+
+        @Override
+        public FileItem write(Path path) throws IOException {
+            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        }
 
 }

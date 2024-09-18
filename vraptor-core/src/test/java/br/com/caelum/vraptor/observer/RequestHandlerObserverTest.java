@@ -26,7 +26,7 @@ import static org.mockito.Mockito.when;
 import java.util.EnumSet;
 
 import javax.enterprise.event.Event;
-import javax.servlet.FilterChain;
+import jakarta.servlet.FilterChain;
 
 import org.junit.Before;
 import org.junit.Test;

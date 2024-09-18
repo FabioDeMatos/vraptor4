@@ -36,8 +36,8 @@ import java.lang.reflect.Method;
 import java.nio.file.Files;
 import java.util.Arrays;
 
-import javax.servlet.ServletOutputStream;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.ServletOutputStream;
+import jakarta.servlet.http.HttpServletResponse;
 
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;

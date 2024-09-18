@@ -21,7 +21,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import javax.enterprise.inject.Vetoed;
-import javax.servlet.ServletContext;
+import jakarta.servlet.ServletContext;
 
 import br.com.caelum.vraptor.core.ReflectionProvider;
 import br.com.caelum.vraptor.http.route.Router;

@@ -20,7 +20,7 @@ import java.io.OutputStream;
 
 import javax.enterprise.context.Dependent;
 import javax.inject.Inject;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletResponse;
 
 import br.com.caelum.vraptor.View;
 
